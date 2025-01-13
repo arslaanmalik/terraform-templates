@@ -50,11 +50,11 @@ module "instances" {
 
 # Print the instance ID & Name from the compute module / Keep this here or in the outputs.tf file on the root
 output "instance_id" {
-  value = module.compute_instance.instance_id
+  value = module.instances.instance_id
 }
 
 output "instance_name" {
-  value = module.compute_instance.instance_name
+  value = module.instances.instance_name
 }
 
 
