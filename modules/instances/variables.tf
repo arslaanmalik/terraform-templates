@@ -1,5 +1,5 @@
 variable "instance_name" {
-  default = "senai-instance"
+  default = "senai-vm"
 }
 
 variable "instance_type" {
