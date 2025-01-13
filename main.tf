@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-  project = "mim-integration"
+  project = "mim-integrations"
   region  = "me-central2"
   zone    = "me-central2-a"
 }
