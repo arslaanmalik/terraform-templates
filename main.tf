@@ -17,13 +17,13 @@ provider "google" {
 
 module "app-instances" {
   vm-name = "app-vm"
-  source = "./modules/instances"
-  
+  source  = "./modules/instances"
+
 }
 
 module "git-instances" {
   vm-name = "git-vm"
-  source = "./modules/instances"
+  source  = "./modules/instances"
 }
 
 
