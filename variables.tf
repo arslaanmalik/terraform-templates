@@ -9,3 +9,4 @@ variable "region" {
 variable "zone" {
   default = "me-central2-a"
 }
+

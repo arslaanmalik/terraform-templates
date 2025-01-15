@@ -1,5 +1,5 @@
 
-resource "google_compute_instance" "senai-instance" {
+resource "google_compute_instance" "instance" {
   #name         = "senai-test"
   name = var.vm-name
   #machine_type = "e2-micro"
