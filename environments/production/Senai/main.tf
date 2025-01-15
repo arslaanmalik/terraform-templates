@@ -1,5 +1,3 @@
-// This file is intentionally left empty as all configurations are managed in component-specific folders.
-
 terraform {
   required_providers {
     google = {
@@ -14,20 +12,3 @@ provider "google" {
   region  = "me-central2"
   zone    = "me-central2-a"
 }
-
-module "app-instances" {
-  source = "./modules/instances"
-}
-
-module "git-instances" {
-  source = "./modules/instances"
-}
-
-
-
-
-
-
-
-
-
