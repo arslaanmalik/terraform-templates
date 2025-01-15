@@ -1,3 +1,3 @@
 module "senai-instances" {
-  source = "./modules/instances"
+  source = "../../../modules/instances"
 }

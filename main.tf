@@ -15,14 +15,14 @@ provider "google" {
   zone    = "me-central2-a"
 }
 
-module "app-instances" {
-  vm-name = "app-vm"
+module "vm1-instances" {
+  vm-name = "vm-1"
   source  = "./modules/instances"
 
 }
 
-module "git-instances" {
-  vm-name = "git-vm"
+module "vm2-instances" {
+  vm-name = "vm-2"
   source  = "./modules/instances"
 }
 

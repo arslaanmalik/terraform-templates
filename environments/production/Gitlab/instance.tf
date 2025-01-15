@@ -1,3 +1,3 @@
-module "senai-instances" {
-  source = "./modules/instances"
+module "gitlab-instances" {
+  source       = "../../../modules/instances"
 }

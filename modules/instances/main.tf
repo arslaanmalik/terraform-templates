@@ -4,7 +4,7 @@ resource "google_compute_instance" "instance" {
   name = var.vm-name
   #machine_type = "e2-micro"
   machine_type = var.machine_type
-  tags         = ["senai-app", "terraform"]
+  tags         = ["my-app", "terraform"]
 
   boot_disk {
     auto_delete = true

@@ -1,4 +1,5 @@
-name                = "gitlab-vm"
+# Instance variables
+vm-name             = "gitlab-vm"
 machine_type        = "e2-standard-2"
 device_name         = "gitlab-test"
 image               = "projects/centos-cloud/global/images/centos-stream-9-v20241210"
