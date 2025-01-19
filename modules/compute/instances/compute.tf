@@ -1,6 +1,7 @@
 
 resource "google_compute_instance" "instance" {
   #name         = "senai-test"
+  zone = var.vm-zone
   name = var.vm-name
   #machine_type = "e2-micro"
   machine_type = var.machine_type

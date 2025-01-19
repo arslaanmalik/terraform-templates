@@ -12,8 +12,7 @@ terraform {
 provider "google" {
   project = "mim-integrations"
   region  = "me-central2"
-  zone    = "any"
-  #zone    = "me-central2-a"
+  #zone    = "me-central2-b"
 }
 
 # module "static_ip" {

@@ -4,6 +4,12 @@ variable "vm-name" {
   default     = "test-vm"
 }
 
+variable "vm-zone" {
+  description = "The Zone"
+  type        = string
+  default     = "me-central2-a"
+}
+
 variable "machine_type" {
   description = "This is the machine type"
   type        = string

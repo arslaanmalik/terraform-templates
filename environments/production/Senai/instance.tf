@@ -1,3 +1,9 @@
+provider "google" {
+  project = "mim-integrations"
+  region  = "me-central2"
+  zone    = "me-central2-a"
+}
+
 module "senai-instances" {
   source             = "../../../modules/compute/instances"
   vm-name            = var.vm-name

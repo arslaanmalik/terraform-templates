@@ -6,10 +6,6 @@ variable "region" {
   default = "me-central2"
 }
 
-variable "zone" {
-  default = "any"
-}
-
 ////////////////////////////
 
 variable "vm-name" {

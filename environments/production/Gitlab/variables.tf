@@ -1,5 +1,15 @@
+variable "zone" {
+  description = "The Zone"
+  type        = string
+}
+
 variable "vm-name" {
   description = "The name of the VM"
+  type        = string
+}
+
+variable "vm-zone" {
+  description = "The Zone"
   type        = string
 }
 

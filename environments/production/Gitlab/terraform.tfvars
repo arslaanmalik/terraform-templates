@@ -1,4 +1,5 @@
 # Instance variables
+zone                = "me-central2-a"
 vm-name             = "gitlab-vm"
 machine_type        = "e2-standard-2"
 device_name         = "gitlab-test"

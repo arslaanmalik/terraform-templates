@@ -1,6 +1,11 @@
+provider "google" {
+  project = "mim-integrations"
+  region  = "me-central2"
+  #zone = "me-central2-a"
+}
+
 module "gitlab-instances" {
-  source = "../../../modules/compute/instances"
-  #vm-name = var.vm-name
+  source             = "../../../modules/compute/instances"
   vm-name            = var.vm-name
   machine_type       = var.machine_type
   device_name        = var.device_name

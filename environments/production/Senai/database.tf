@@ -1,3 +1,8 @@
+provider "google" {
+  project = "mim-integrations"
+  region  = "me-central2"
+}
+
 module "database" {
   source = "../../../modules/sql"
 }
