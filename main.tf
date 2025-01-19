@@ -1,5 +1,3 @@
-// This file is intentionally left empty as all configurations are managed in component-specific folders.
-
 terraform {
   required_providers {
     google = {
@@ -15,16 +13,51 @@ provider "google" {
   zone    = "me-central2-a"
 }
 
-module "vm1-instances" {
-  vm-name = "vm-1"
-  source  = "./modules/instances"
+#OR do it like below for variables
 
+# provider "google" {
+#   project = var.project_id
+#   region  = var.region
+#   zone    = var.zone
+# }
+
+module "instances" {
+  source = "./modules/instances"
 }
 
-module "vm2-instances" {
-  vm-name = "vm-2"
-  source  = "./modules/instances"
+# module "database" {
+#   source = "./modules/database"
+# }
+
+# module "storage" {
+#   source = "./modules/storage"
+# }
+
+# module "test-vpc-module" {
+#   source = "./modules/network"
+# }
+
+
+# resource "google_compute_network" "vpc_network" {
+#   name = "senai-network"
+# }
+
+# resource "google_service_account" "default" {
+#   account_id   = "my-custom-sa"
+#   display_name = "Custom SA for VM Instance"
+# }
+
+
+# Print the instance ID & Name from the compute module / Keep this here or in the outputs.tf file on the root
+output "instance_id" {
+  value = module.instances.instance_id
 }
+
+output "instance_name" {
+  value = module.instances.instance_name
+}
+
+
 
 
 
