@@ -1,0 +1,15 @@
+# Instance variables
+vm-name             = "gitlab-vm"
+machine_type        = "e2-standard-2"
+device_name         = "gitlab-test"
+image               = "projects/centos-cloud/global/images/centos-stream-9-v20241210"
+size                = "20"
+type                = "pd-ssd"
+disk_label          = "gitlab-terraform-disk"
+can_ip_forward      = "true"
+deletion_protection = "false"
+assign_external_ip  = "true"
+network_tier        = "PREMIUM"
+static_ip_address   = "34.166.93.118"
+# SQL variables
+db-name = "senai-db"
