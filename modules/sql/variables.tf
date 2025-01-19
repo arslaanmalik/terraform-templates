@@ -16,72 +16,84 @@ variable "database_version" {
   default     = "MYSQL_8_4"
 }
 
-variable "region" {
+variable "db-region" {
   type    = string
   default = "me-central2"
 }
 
-variable "tier" {
+variable "db-password" {
+  type    = string
+  default = "root"
+}
+
+variable "db-tier" {
   type    = string
   default = "db-n1-standard-1"
 }
-variable "type" {
+variable "db-disk-type" {
   description = "This is the Disk Type SSD or Standard"
   type        = string
-  default     = "pd-standard"
+  default     = "pd-ssd"
 }
 
-variable "edition" {
+variable "db-edition" {
   type    = string
   default = "ENTERPRISE"
 }
 
-variable "availability_type" {
+variable "db-availability_type" {
   type    = string
-  default = "REGIONAL"
+  default = "ZONAL"
+  #default = "REGIONAL"
 }
 
-variable "disk_autoresize" {
+variable "db-disk_autoresize" {
   type    = string
   default = "true"
 }
 
-variable "disk_size" {
+variable "db-disk_size" {
   type    = string
-  default = "20"
+  default = "10"
 }
 
-variable "disk_type" {
-  type    = string
-  default = "PD_HDD"
-}
-
-variable "deletion_protection_enabled" {
-  type    = string
-  default = "ENABLED"
-}
-
-variable "private_network" {
-  type    = string
-  default = "main"
-}
-
-variable "allocated_ip_range" {
+variable "db-disk_type" {
   type    = string
   default = "PD_HDD"
 }
 
-variable "retained_backups" {
+variable "db-deletion_protection_enabled" {
+  type    = bool
+  default = "false"
+}
+
+variable "db-private_network" {
+  type    = string
+  default = "https://www.googleapis.com/compute/v1/projects/mim-integrations/global/networks/main"
+}
+
+variable "db-ipv4_enabled" {
+  type    = bool
+  default = false
+
+}
+
+variable "db-allocated_ip_range" {
+  type    = string
+  default = ""
+}
+
+variable "db-retained_backups" {
   type    = string
   default = "7"
 }
 
-variable "retention_unit" {
+variable "db-retention_unit" {
   type    = string
   default = "COUNT"
 }
 
-variable "deletion_protection" {
+variable "db-deletion_protection" {
   type    = string
   default = "false"
 }

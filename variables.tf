@@ -6,6 +6,12 @@ variable "region" {
   default = "me-central2"
 }
 
+variable "vm-zone" {
+  description = "The Zone"
+  type        = string
+  default     = "me-central2-a"
+}
+
 ////////////////////////////
 
 variable "vm-name" {

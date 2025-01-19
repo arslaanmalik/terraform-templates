@@ -12,26 +12,33 @@ terraform {
 provider "google" {
   project = "mim-integrations"
   region  = "me-central2"
-  #zone    = "me-central2-b"
+  zone    = "me-central2-a"
 }
 
 # module "static_ip" {
 #   source = "./modules/compute/static_ip"
 # }
 
-module "vm1-instances" {
-  source             = "./modules/compute/instances/"
-  vm-name            = "vm-1"
-  assign_external_ip = true
-  #static_ip_address  = module.static_ip.static_ip_address
+# module "vm1-instances" {
+#   source             = "./modules/compute/instances/"
+#   vm-name            = "vm-1"
+#   assign_external_ip = true
+#   #static_ip_address  = module.static_ip.static_ip_address
+#   vm-zone = "me-central2-c"
 
 
-}
+# }
 
-module "vm2-instances" {
-  source             = "./modules/compute/instances/"
-  vm-name            = "vm-2"
-  assign_external_ip = false
+# module "vm2-instances" {
+#   source             = "./modules/compute/instances/"
+#   vm-name            = "vm-2"
+#   assign_external_ip = false
+#   vm-zone            = var.vm-zone
+# }
+
+module "mysql-dev" {
+  source = "./modules/sql"
+
 }
 
 
