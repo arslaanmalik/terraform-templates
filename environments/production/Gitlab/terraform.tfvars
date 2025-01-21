@@ -12,3 +12,4 @@ deletion_protection = "false"
 assign_external_ip  = "true"
 network_tier        = "PREMIUM"
 #static_ip_address   = "34.166.93.117"
+

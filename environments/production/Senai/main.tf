@@ -6,8 +6,3 @@ terraform {
     }
   }
 }
-
-provider "google" {
-  project = "mim-integrations"
-  region  = "me-central2"
-}

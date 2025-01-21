@@ -70,7 +70,6 @@ variable "deletion_protection" {
 }
 
 
-
 ///////////////////////////////////////
 #SQL Variablesvariable 
 

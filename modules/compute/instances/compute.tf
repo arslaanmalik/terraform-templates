@@ -76,13 +76,15 @@ resource "google_compute_instance" "instance" {
   }
 
   #metadata_startup_script = "echo hi > /test.txt"
-  metadata_startup_script   = <<-EOT
-    #!/bin/bash
-    apt-get update
-  EOT
-  allow_stopping_for_update = true
+  # metadata_startup_script   = <<-EOT
+  #   #!/bin/bash
+  #   apt-get update
+  # EOT
 
   #metadata_startup_script = file("startup-script.sh")
+  metadata_startup_script = var.vm-startup_script
+
+  allow_stopping_for_update = true
 
 }
 

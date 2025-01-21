@@ -60,6 +60,10 @@ variable "network_tier" {
 #   type = string
 # }
 
+variable "vm-startup_script" {
+  type = string
+}
+
 variable "deletion_protection" {
   type    = string
   default = "false"

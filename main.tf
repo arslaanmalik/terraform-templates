@@ -19,15 +19,17 @@ provider "google" {
 #   source = "./modules/compute/static_ip"
 # }
 
-# module "vm1-instances" {
-#   source             = "./modules/compute/instances/"
-#   vm-name            = "vm-1"
-#   assign_external_ip = true
-#   #static_ip_address  = module.static_ip.static_ip_address
-#   vm-zone = "me-central2-c"
+module "vm1-instances" {
+  source             = "./modules/compute/instances/"
+  vm-name            = "vm-1"
+  image              = "projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20250111"
+  assign_external_ip = true
+  #static_ip_address  = module.static_ip.static_ip_address
+  vm-zone           = "me-central2-c"
+  vm-startup_script = file("../../../scripts/vm-setup-ubuntu.sh")
 
 
-# }
+}
 
 # module "vm2-instances" {
 #   source             = "./modules/compute/instances/"
@@ -36,16 +38,10 @@ provider "google" {
 #   vm-zone            = var.vm-zone
 # }
 
-module "mysql-dev" {
-  source = "./modules/sql"
+# module "mysql-dev" {
+#   source = "./modules/sql"
 
-}
-
-
-
-
-
-
+# }
 
 
 
