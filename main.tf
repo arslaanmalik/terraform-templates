@@ -27,6 +27,8 @@ module "vm1-instances" {
   #static_ip_address  = module.static_ip.static_ip_address
   vm-zone           = "me-central2-c"
   vm-startup_script = file("../../../scripts/vm-setup-ubuntu.sh")
+  vm-allow_http     = true
+  vm-allow_https    = true
 
 
 }
@@ -36,6 +38,9 @@ module "vm1-instances" {
 #   vm-name            = "vm-2"
 #   assign_external_ip = false
 #   vm-zone            = var.vm-zone
+   vm-allow_http     = true
+   vm-allow_https    = true
+
 # }
 
 # module "mysql-dev" {

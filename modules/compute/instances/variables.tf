@@ -68,3 +68,19 @@ variable "deletion_protection" {
   type    = string
   default = "false"
 }
+
+
+variable "vm-allow_http" {
+  type    = bool
+  default = false
+}
+
+variable "vm-allow_https" {
+  type    = bool
+  default = false
+}
+
+variable "vm-allow_lb-health-check" {
+  type    = bool
+  default = false
+}

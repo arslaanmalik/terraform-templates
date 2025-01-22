@@ -5,7 +5,11 @@ resource "google_compute_instance" "instance" {
   name = var.vm-name
   #machine_type = "e2-micro"
   machine_type = var.machine_type
-  tags         = ["my-app", "terraform"]
+  tags = [
+  var.vm-allow_http ? "http-server" : null,
+  var.vm-allow_https ? "https-server" : null,
+  var.vm-allow_lb-health-check ? "lb-health-check" : null
+]
 
   boot_disk {
     auto_delete = true
