@@ -69,6 +69,21 @@ variable "deletion_protection" {
   default = "false"
 }
 
+variable "vm-tag1" {
+  type    = string
+  default = "tag1"
+}
+
+variable "vm-tag2" {
+  type    = string
+  default = "tag2"
+}
+
+variable "vm-tag3" {
+  type    = string
+  default = "tag3"
+}
+
 
 ///////////////////////////////////////
 #SQL Variablesvariable 

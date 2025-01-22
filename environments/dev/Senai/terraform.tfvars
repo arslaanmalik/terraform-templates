@@ -12,7 +12,9 @@ deletion_protection = "false"
 assign_external_ip  = "false"
 network_tier        = "STANDARD"
 #static_ip_address   = "34.166.93.118"
-
+vm-tag1 = "http"
+vm-tag2 = "https"
+vm-tag3 = "lb-health-check"
 # SQL variables
 db-name                        = "senai-database-dev"
 database_version               = "MYSQL_8_4"

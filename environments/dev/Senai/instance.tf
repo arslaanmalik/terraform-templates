@@ -22,5 +22,8 @@ module "senai-instances" {
   network_tier       = var.network_tier
   #static_ip_address   = var.static_ip_address
   deletion_protection = var.deletion_protection
-  vm-startup_script   = var.vm-startup_script
+  vm-startup_script   = file("../../../scripts/vm-setup-ubuntu.sh")
+  vm-tag1             = var.vm-tag1
+  vm-tag2             = var.vm-tag2
+  vm-tag3             = var.vm-tag3
 }

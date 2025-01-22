@@ -5,11 +5,8 @@ resource "google_compute_instance" "instance" {
   name = var.vm-name
   #machine_type = "e2-micro"
   machine_type = var.machine_type
-  tags = [
-  var.vm-allow_http ? "http-server" : null,
-  var.vm-allow_https ? "https-server" : null,
-  var.vm-allow_lb-health-check ? "lb-health-check" : null
-]
+  #tags = ["http-server", "https-server", "lb-health-check"] # Tags to allow HTTP and HTTPS
+  tags = [var.vm-tag1, var.vm-tag2, var.vm-tag3]
 
   boot_disk {
     auto_delete = true

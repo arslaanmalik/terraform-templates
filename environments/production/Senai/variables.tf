@@ -61,7 +61,8 @@ variable "network_tier" {
 # }
 
 variable "vm-startup_script" {
-  type = string
+  type    = string
+  default = ""
 }
 
 variable "deletion_protection" {
@@ -69,6 +70,20 @@ variable "deletion_protection" {
   default = "false"
 }
 
+variable "vm-tag1" {
+  type    = string
+  default = "tag1"
+}
+
+variable "vm-tag2" {
+  type    = string
+  default = "tag2"
+}
+
+variable "vm-tag3" {
+  type    = string
+  default = "tag3"
+}
 
 
 ///////////////////////////////////////
