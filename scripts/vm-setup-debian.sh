@@ -47,5 +47,4 @@ sudo apt-get install -y nodejs
 echo "Install PM2"
 sudo npm install -g pm2
 
-
 sudo apt-get install mysql-client

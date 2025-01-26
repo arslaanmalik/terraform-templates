@@ -19,31 +19,31 @@ provider "google" {
 #   source = "./modules/compute/static_ip"
 # }
 
-module "vm1-instances" {
-  source  = "./modules/compute/instances/"
-  vm-name = "vm-1"
-  image   = "projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20250111"
-  #assign_external_ip = true
-  #static_ip_address  = module.static_ip.static_ip_address
-  vm-zone           = "me-central2-c"
-  vm-startup_script = file("./scripts/vm-setup-ubuntu.sh")
-  vm-tag1           = "http"
-  vm-tag2           = "https"
-  vm-tag3           = "lb-health-check"
-
-}
-
-# module "vm2-instances" {
-#   source             = "./modules/compute/instances/"
-#   vm-name            = "vm-2"
-#   assign_external_ip = false
-#   vm-zone            = var.vm-zone
-#   vm-startup_script  = ""
-#   vm-tag1            = "http"
-#   vm-tag2            = "https"
-#   vm-tag3            = "lb-health-check"
+# module "vm1-instances" {
+#   source  = "./modules/compute/instances/"
+#   vm-name = "vm-1"
+#   image   = "projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20250111"
+#   #assign_external_ip = true
+#   #static_ip_address  = module.static_ip.static_ip_address
+#   vm-zone           = "me-central2-c"
+#   vm-startup_script = file("./scripts/vm-setup-ubuntu.sh")
+#   vm-tag1           = "http"
+#   vm-tag2           = "https"
+#   vm-tag3           = "lb-health-check"
 
 # }
+
+module "vm2-instances" {
+  source             = "./modules/compute/instances/"
+  vm-name            = "vm-2"
+  assign_external_ip = false
+  vm-zone            = var.vm-zone
+  vm-startup_script  = ""
+  vm-tag1            = "http-server"
+  vm-tag2            = "https-server"
+  vm-tag3            = "lb-health-check"
+
+}
 
 # module "mysql-dev" {
 #   source = "./modules/sql"

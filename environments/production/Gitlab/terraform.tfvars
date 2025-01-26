@@ -12,8 +12,7 @@ deletion_protection = "false"
 assign_external_ip  = "true"
 network_tier        = "PREMIUM"
 #static_ip_address   = "34.166.93.117"
-vm-tag1 = "http"
-vm-tag2 = "https"
+vm-tag1 = "http-server"
+vm-tag2 = "https-server"
 vm-tag3 = "lb-health-check"
-
 
