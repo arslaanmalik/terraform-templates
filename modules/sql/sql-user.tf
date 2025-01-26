@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////
 ##For Creating the databaseuser in the instance
 
-resource "google_sql_user" "users" {
+resource "google_sql_user" "sql-db-user" {
   name     = var.db-user
   project  = var.project
   instance = google_sql_database_instance.instance.name
