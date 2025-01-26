@@ -18,6 +18,7 @@ vm-tag3 = "lb-health-check"
 
 
 # SQL variables
+db-instance-name               = "senai-staging"
 db-name                        = "senai-database-staging"
 database_version               = "MYSQL_8_4"
 db-region                      = "me-central2"

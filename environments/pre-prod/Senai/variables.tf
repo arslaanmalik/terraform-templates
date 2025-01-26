@@ -88,8 +88,14 @@ variable "vm-tag3" {
 ///////////////////////////////////////
 #SQL Variablesvariable 
 
+variable "db-instance-name" {
+  description = "The name of the Database Instance"
+  type        = string
+  default     = "test-db"
+}
+
 variable "db-name" {
-  description = "The name of the Database"
+  description = "The name of the Database Created"
   type        = string
   default     = "test-db"
 }

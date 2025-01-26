@@ -1,5 +1,11 @@
+variable "db-instance-name" {
+  description = "The name of the Database Instance"
+  type        = string
+  default     = "test-db"
+}
+
 variable "db-name" {
-  description = "The name of the Database"
+  description = "The name of the Database Created"
   type        = string
   default     = "test-db"
 }
@@ -30,11 +36,6 @@ variable "db-tier" {
   type    = string
   default = "db-n1-standard-1"
 }
-variable "db-disk-type" {
-  description = "This is the Disk Type SSD or Standard"
-  type        = string
-  default     = "pd-ssd"
-}
 
 variable "db-edition" {
   type    = string
@@ -58,8 +59,9 @@ variable "db-disk_size" {
 }
 
 variable "db-disk_type" {
-  type    = string
-  default = "PD_HDD"
+  description = "This is the Disk Type SSD or Standard"
+  type        = string
+  default     = "PD_HDD"
 }
 
 variable "db-deletion_protection_enabled" {

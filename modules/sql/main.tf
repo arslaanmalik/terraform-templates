@@ -7,7 +7,7 @@ locals {
 # See versions at https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance#database_version
 resource "google_sql_database_instance" "instance" {
   #name             = "senai-database-instance"
-  name             = var.db-name
+  name             = var.db-instance-name
   project          = var.project
   database_version = var.database_version
   #database_version = "MYSQL_8_4"
@@ -70,7 +70,7 @@ resource "google_sql_database_instance" "instance" {
 ////////////////////////////////////////////////////////////////////////////////////
 ##For Creating the database in the instance created above or any specific you want to mention
 resource "google_sql_database" "database" {
-  name     = "my-database"
+  name     = var.db-name
   instance = google_sql_database_instance.instance.name
   #deletion_policy = "DELETE"
 }

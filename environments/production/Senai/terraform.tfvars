@@ -18,6 +18,7 @@ vm-tag3 = "lb-health-check"
 
 
 # SQL variables
+db-instance-name               = "senai-prod"
 db-name                        = "senai-database-prod"
 database_version               = "MYSQL_8_4"
 db-region                      = "me-central2"

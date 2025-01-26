@@ -9,6 +9,7 @@ module "database" {
     google = google.db
   }
   source                         = "../../../modules/sql"
+  db-instance-name               = var.db-instance-name
   db-name                        = var.db-name
   database_version               = var.database_version
   db-region                      = var.db-region

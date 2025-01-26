@@ -16,6 +16,7 @@ vm-tag1 = "http-server"
 vm-tag2 = "https-server"
 vm-tag3 = "lb-health-check"
 # SQL variables
+db-instance-name               = "senai-dev"
 db-name                        = "senai-database-dev"
 database_version               = "MYSQL_8_4"
 db-region                      = "me-central2"
