@@ -13,6 +13,7 @@ module "database" {
   db-name                        = var.db-name
   database_version               = var.database_version
   db-region                      = var.db-region
+  db-user                        = var.db-user
   db-password                    = var.db-password
   db-tier                        = var.db-tier
   db-edition                     = var.db-edition

@@ -27,9 +27,15 @@ variable "db-region" {
   default = "me-central2"
 }
 
-variable "db-password" {
+variable "db-user" {
   type    = string
   default = "root"
+}
+
+variable "db-password" {
+  type      = string
+  default   = "root"
+  sensitive = true
 }
 
 variable "db-tier" {

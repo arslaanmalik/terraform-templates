@@ -29,7 +29,7 @@ sudo sed -i 's/^user www-data;/user deployer;/' /etc/nginx/nginx.conf
 
 echo "Replacing default user and group in PHP-FPM configuration with 'deployer'"
 sudo sed -i 's/^user = www-data/user = deployer/; s/^group = www-data/group = deployer/' /etc/php/8.3/fpm/pool.d/www.conf
-sudo sed -i 's/^listen.owner = www-data/user = deployer/; s/^listen.group = www-data/group = deployer/' /etc/php/8.3/fpm/pool.d/www.conf
+sudo sed -i 's/^listen.owner = www-data/listen.owner = deployer/; s/^listen.group = www-data/listen.group = deployer/' /etc/php/8.3/fpm/pool.d/www.conf
 
 echo "Create a new user 'deployer' and a group 'webgroup'"
 useradd -m -s /bin/bash deployer
@@ -46,5 +46,4 @@ sudo apt-get install -y nodejs
 echo "Install PM2"
 sudo npm install -g pm2
 
-sudo apt-get install mysql-client
-
+sudo apt-get install mysql-client -y
