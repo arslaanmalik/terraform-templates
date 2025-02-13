@@ -23,7 +23,26 @@ module "senai-instances" {
   #static_ip_address   = var.static_ip_address
   deletion_protection = var.deletion_protection
   vm-startup_script   = file("../../../scripts/vm-setup-ubuntu.sh")
-  vm-tag1             = var.vm-tag1
-  vm-tag2             = var.vm-tag2
-  vm-tag3             = var.vm-tag3
+  vm-tags             = var.vm-tags
+}
+
+module "dxp-instance-" {
+  providers = {
+    google = google.instance
+  }
+  source             = "../../../modules/compute/instances"
+  vm-name            = "dxp-dev-vm"
+  machine_type       = var.machine_type
+  device_name        = "dxp-dev"
+  image              = var.image
+  size               = var.size
+  type               = var.type
+  disk_label         = "dxp-terraform-disk-dev"
+  can_ip_forward     = var.can_ip_forward
+  assign_external_ip = true
+  network_tier       = var.network_tier
+  #static_ip_address   = var.static_ip_address
+  deletion_protection = var.deletion_protection
+  vm-startup_script   = file("../../../scripts/vm-setup-ubuntu.sh")
+  vm-tags             = var.vm-tags
 }

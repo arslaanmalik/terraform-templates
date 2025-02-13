@@ -12,10 +12,12 @@ deletion_protection = "false"
 assign_external_ip  = "false"
 network_tier        = "PREMIUM"
 #static_ip_address   = "34.166.93.118"
-vm-tag1 = "http-server"
-vm-tag2 = "https-server"
-vm-tag3 = "lb-health-check"
-
+vm-tags = {
+  "tag1" = "http-server",
+  "tag2" = "https-server",
+  "tag3" = "lb-health-check",
+  "tag4" = "port81"
+}
 
 # SQL variables
 db-instance-name               = "senai-prod"

@@ -70,19 +70,20 @@ variable "deletion_protection" {
   default = "false"
 }
 
-variable "vm-tag1" {
-  type    = string
-  default = "tag1"
+variable "vm-tags" {
+  type = map(string)
+  default = {
+  }
 }
 
-variable "vm-tag2" {
-  type    = string
-  default = "tag2"
+variable "vm-provisioning_model" {
+  type = string
+  default = "STANDARD"
 }
 
-variable "vm-tag3" {
-  type    = string
-  default = "tag3"
+variable "vm-automatic_restart" {
+  type = bool
+  default = "true"
 }
 
 

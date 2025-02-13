@@ -5,12 +5,12 @@ provider "google" {
   zone    = "me-central2-a"
 }
 
-module "senai-instances" {
+module "bastion-dev-instance" {
   providers = {
     google = google.instance
   }
   source             = "../../../modules/compute/instances"
-  vm-name            = var.vm-name
+  vm-name            = "bastion-dev"
   machine_type       = var.machine_type
   device_name        = var.device_name
   image              = var.image
@@ -22,6 +22,6 @@ module "senai-instances" {
   network_tier       = var.network_tier
   #static_ip_address   = var.static_ip_address
   deletion_protection = var.deletion_protection
-  vm-startup_script   = var.vm-startup_script
+  vm-startup_script   = ""
   vm-tags             = var.vm-tags
 }

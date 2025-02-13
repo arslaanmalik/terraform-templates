@@ -7,6 +7,10 @@ terraform {
       version = ">= 2.15.0, < 6.15.0"
     }
   }
+  backend "gcs" {
+    bucket = "terraform-mim-integrations" # Replace with your GCS bucket name
+    prefix = "environments/"              # Path where the state files will be stored
+  }
 }
 
 provider "google" {
@@ -19,6 +23,11 @@ provider "google" {
 #   source = "./modules/compute/static_ip"
 # }
 
+# module "bucket-test" {
+#   source = "./modules/bucket-storage"
+
+# }
+
 # module "vm1-instances" {
 #   source  = "./modules/compute/instances/"
 #   vm-name = "vm-1"
@@ -27,28 +36,20 @@ provider "google" {
 #   #static_ip_address  = module.static_ip.static_ip_address
 #   vm-zone           = "me-central2-c"
 #   vm-startup_script = file("./scripts/vm-setup-ubuntu.sh")
-#   vm-tag1           = "http"
-#   vm-tag2           = "https"
-#   vm-tag3           = "lb-health-check"
+# vm-tags = var.vm-tags
 
 # }
 
-module "vm2-instances" {
-  source             = "./modules/compute/instances/"
-  vm-name            = "vm-2"
-  assign_external_ip = false
-  vm-zone            = var.vm-zone
-  vm-startup_script  = ""
-  vm-tag1            = "http-server"
-  vm-tag2            = "https-server"
-  vm-tag3            = "lb-health-check"
-
-}
+# module "vm2-instances" {
+#   source             = "./modules/compute/instances/"
+#   vm-name            = "bastion-server"
+#   assign_external_ip = false
+#   vm-zone            = var.vm-zone
+#   vm-startup_script  = ""
+#   vm-tags            = var.vm-tags
+# }
 
 # module "mysql-dev" {
 #   source = "./modules/sql"
 
 # }
-
-
-

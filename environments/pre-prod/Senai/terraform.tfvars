@@ -3,21 +3,23 @@ vm-zone             = "me-central2-b"
 vm-name             = "senai-preprod-vm"
 machine_type        = "e2-standard-2"
 device_name         = "senai-preprod"
-image               = "projects/centos-cloud/global/images/centos-stream-9-v20241210"
-size                = "20"
+image               = "projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20250111"
+size                = "30"
 type                = "pd-ssd"
 disk_label          = "senai-terraform-disk-preprod"
-can_ip_forward      = "true"
+can_ip_forward      = "false"
 deletion_protection = "false"
 assign_external_ip  = "false"
 network_tier        = "PREMIUM"
 #static_ip_address   = "34.166.93.118"
-vm-tag1 = "http-server"
-vm-tag2 = "https-server"
-vm-tag3 = "lb-health-check"
-
-
+vm-tags = {
+  "tag1" = "http-server",
+  "tag2" = "https-server",
+  "tag3" = "lb-health-check",
+  "tag4" = "port81"
+}
 # SQL variables
+db-instance-name               = "senai-preprod"
 db-name                        = "senai-database-preprod"
 database_version               = "MYSQL_8_4"
 db-region                      = "me-central2"
@@ -36,3 +38,7 @@ db-allocated_ip_range          = ""
 db-retained_backups            = "7"
 db-retention_unit              = "COUNT"
 db-deletion_protection         = "false"
+# Bucket variables
+bucket-name          = "senai-pre-prod"
+bucket-storage_class = "STANDARD"
+bucket-force_destroy = "true"

@@ -1,4 +1,4 @@
-variable "vm-name" {
+variable "bastion-vm-name" {
   description = "The name of the VM"
   type        = string
   default     = "test-vm"
@@ -85,6 +85,7 @@ variable "vm-automatic_restart" {
   type = bool
   default = "true"
 }
+
 
 ///////////////////////////////////////
 #SQL Variablesvariable 
@@ -225,3 +226,8 @@ variable "bucket-uniform_bucket_level_access" {
 variable "bucket-versioning-enabled" {
   default = "true"
 }
+
+
+
+
+  

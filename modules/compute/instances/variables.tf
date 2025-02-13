@@ -23,7 +23,7 @@ variable "device_name" {
 
 variable "image" {
   type    = string
-  default = "projects/debian-cloud/global/images/debian-12-bookworm-v20250113"
+  default = "projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20250111"
 }
 
 variable "size" {
@@ -70,17 +70,18 @@ variable "deletion_protection" {
   default = "false"
 }
 
-variable "vm-tag1" {
-  type    = string
-  default = "tag1"
+variable "vm-tags" {
+  type = map(string)
+  default = {
+  }
 }
 
-variable "vm-tag2" {
-  type    = string
-  default = "tag2"
+variable "vm-provisioning_model" {
+  type = string
+  default = "STANDARD"
 }
 
-variable "vm-tag3" {
-  type    = string
-  default = "tag3"
+variable "vm-automatic_restart" {
+  type = bool
+  default = "true"
 }

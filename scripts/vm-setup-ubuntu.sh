@@ -36,7 +36,14 @@ useradd -m -s /bin/bash deployer
 
 echo "Set permissions for nginx directories"
 mkdir /apps
+mkdir /apps/backend
+mkdir /apps/backend/shared-files
+mdkir /apps/backend/releases
 chown -R deployer:deployer /apps
+
+echo "PHP FPM Service Restart"
+sudo service php8.3-fpm restart
+
 
 echo "Installing nvm and nodejs 22"
 sudo curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh
@@ -47,3 +54,9 @@ echo "Install PM2"
 sudo npm install -g pm2
 
 sudo apt-get install mysql-client -y
+curl -o cloud-sql-proxy https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.3/cloud-sql-proxy.linux.amd64
+chmod +x cloud-sql-proxy
+
+echo "If The PHP FPM Service is not with deployer we will remove and restart"
+sudo rm /var/run/php/php8.3-fpm
+sudo service php8.3-fpm restart

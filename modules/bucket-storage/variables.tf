@@ -1,33 +1,28 @@
-variable "name" {
-  default = "s3-storage"
+variable "bucket-name" {
+  default = "bucket"
 }
 variable "project" {
   default = "mim-integrations"
 }
 
-variable "storage_class" {
+variable "bucket-storage_class" {
   default = "STANDARD"
 }
 
-variable "location" {
-  default = "EU"
+variable "bucket-location" {
+  default = "me-central2"
 }
-variable "force_destroy" {
+variable "bucket-force_destroy" {
   default = "true"
 }
 
-variable "public_access_prevention" {
+variable "bucket-public_access_prevention" {
   default = "inherited"
 }
 
-variable "uniform_bucket_level_access" {
-  default = "false"
-}
-variable "versioning-enabled" {
+variable "bucket-uniform_bucket_level_access" {
   default = "true"
 }
-
-
-
-
-  
+variable "bucket-versioning-enabled" {
+  default = "true"
+}

@@ -70,19 +70,20 @@ variable "deletion_protection" {
   default = "false"
 }
 
-variable "vm-tag1" {
-  type    = string
-  default = "tag1"
+variable "vm-tags" {
+  type = map(string)
+  default = {
+  }
 }
 
-variable "vm-tag2" {
-  type    = string
-  default = "tag2"
+variable "vm-provisioning_model" {
+  type = string
+  default = "STANDARD"
 }
 
-variable "vm-tag3" {
-  type    = string
-  default = "tag3"
+variable "vm-automatic_restart" {
+  type = bool
+  default = "true"
 }
 
 
@@ -196,3 +197,37 @@ variable "db-deletion_protection" {
   type    = string
   default = "false"
 }
+
+///////////////////////////////////////
+#Bucket Variablesvariable 
+
+variable "bucket-name" {
+  default = "bucket"
+}
+
+variable "bucket-storage_class" {
+  default = "STANDARD"
+}
+
+variable "bucket-location" {
+  default = "me-central2"
+}
+variable "bucket-force_destroy" {
+  default = "true"
+}
+
+variable "bucket-public_access_prevention" {
+  default = "inherited"
+}
+
+variable "bucket-uniform_bucket_level_access" {
+  default = "true"
+}
+variable "bucket-versioning-enabled" {
+  default = "true"
+}
+
+
+
+
+  

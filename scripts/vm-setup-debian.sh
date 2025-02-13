@@ -49,3 +49,9 @@ echo "Install PM2"
 sudo npm install -g pm2
 
 sudo apt-get install mysql-client -y
+curl -o cloud-sql-proxy https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.3/cloud-sql-proxy.linux.amd64
+chmod +x cloud-sql-proxy
+
+echo "If The PHP FPM Service is not with deployer we will remove and restart"
+sudo rm /var/run/php/php8.3-fpm
+sudo service php8.3-fpm restart

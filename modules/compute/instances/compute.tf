@@ -6,7 +6,7 @@ resource "google_compute_instance" "instance" {
   #machine_type = "e2-micro"
   machine_type = var.machine_type
   #tags = ["http-server", "https-server", "lb-health-check"] # Tags to allow HTTP and HTTPS
-  tags = [var.vm-tag1, var.vm-tag2, var.vm-tag3]
+  tags = values(var.vm-tags)
 
   boot_disk {
     auto_delete = true
@@ -42,8 +42,8 @@ resource "google_compute_instance" "instance" {
       for_each = var.assign_external_ip ? [1] : []
 
       content {
-        network_tier = "var.network_tier"
-        # nat_ip       = var.static_ip_address
+        network_tier = var.network_tier
+        #nat_ip       = var.static_ip_address
       }
     }
 
@@ -59,15 +59,17 @@ resource "google_compute_instance" "instance" {
   }
 
   scheduling {
-    automatic_restart   = true
-    on_host_maintenance = "MIGRATE"
+    automatic_restart   = var.vm-automatic_restart
+    #on_host_maintenance = "MIGRATE"
     preemptible         = false
+    provisioning_model  = var.vm-provisioning_model
   }
 
   #     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
   service_account {
-    email  = "63367853580-compute@developer.gserviceaccount.com"
-    scopes = ["https://www.googleapis.com/auth/cloud-platform"]
+    email = "63367853580-compute@developer.gserviceaccount.com"
+    #scopes = ["https://www.googleapis.com/auth/cloud-platform"] --- Full Access
+    scopes = ["https://www.googleapis.com/auth/devstorage.read_only", "https://www.googleapis.com/auth/logging.write", "https://www.googleapis.com/auth/monitoring.write", "https://www.googleapis.com/auth/service.management.readonly", "https://www.googleapis.com/auth/servicecontrol", "https://www.googleapis.com/auth/trace.append"]
   }
 
   shielded_instance_config {
